@@ -1,0 +1,5 @@
+num1=input("Enter a number...")
+num2=input("Enter a another number...")
+operand=input("what do you want to do with these numbers?")
+result = int(num1)+int(num2)
+print( result )
