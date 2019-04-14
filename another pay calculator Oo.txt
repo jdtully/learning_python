@@ -1,0 +1,47 @@
+"""4.6 Write a program to prompt the user for hours and rate per hour 
+using input to compute gross pay. Pay should be the normal rate for 
+hours up to 40 and time-and-a-half for the hourly rate for all hours 
+worked above 40 hours. Put the logic to do the computation of pay in a 
+function called computepay() and use the function to do the computation.
+ The function should return a value. Use 45 hours and a rate of 10.50 per
+  hour to test the program (the pay should be 498.75). You should
+   use input to read a string and float() to convert the string to a number. 
+   Do not worry about error checking the user input unless you want to - you
+    can assume the user types numbers properly.
+     Do not name your variable sum or use the sum() function."""
+
+num1 = 0
+num2 = 0
+
+
+def computepay(h,r):
+    global num1
+    global num2
+    num1 = float(input("Please enter your payrate: "))
+    num2 = float(input("Please enter your hours: "))
+        if num2 <= float(40):
+        print(num1*num2)
+        break
+    elif num2 > float(40):
+        print((((num2-40)*1.5)+40)*num1)
+        break
+
+    return
+
+p = computepay(10,20)
+print("Pay",p)
+
+while True:
+    get_nums()
+    if num2 <= float(40):
+        print(num1*num2)
+        break
+    elif num2 > float(40):
+        print((((num2-40)*1.5)+40)*num1)
+        break
+
+    else:
+        print("Unknown input")
+
+        
+        

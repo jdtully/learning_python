@@ -12,7 +12,7 @@ from random import randint
 start = 1
 end = 100
 value = randint(start, end)
-tries = 1
+tries = 0
 
 print(value)
 print("I'm thinking of a number between", start, "and", end)
@@ -22,15 +22,14 @@ guess = None
 while guess != value:
     text = input("Guess the number: ")
     guess = int(text)
-
+    tries = tries + 1
     if guess < value:
-        print("Higher.")
-        tries = tries + 1
+        print("Higher.")  
     elif guess > value:
         print("Lower.")
-        tries = tries +1
-while guess = value:
-    if tries = 1
+end
+
+if tries == 1:
     print("you got it on the first try!")
-    elif tries > 1
-    print("It only took you", tries)
+elif tries > 1:
+    print("It only took you", tries, "tries")

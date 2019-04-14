@@ -1,29 +1,29 @@
+num1 = 0
+num2 = 0
+
+def get_nums():
+    global num1
+    global num2
+    num1 = float(input("payr: "))
+    num2 = float(input("Enter another number: "))
+
 while True:
-    print("Options:")
-    print("Enter 'add' to add two numbers")
-    print("Enter 'subtract' to subtract two numbers")
-    print("Enter 'multiply' to multiply two numbers")
-    print("Enter 'divide' to divide two numbers")
-    print("Enter 'quit' to end the program")
+    print("Please enter your pay rate and hours:")
     user_input = input(": ")
+
     if user_input == "quit":
         break
-    elif user_input == "add":
-        num1 = float(input("Enter a number: "))
-        num2 = float(input("Enter another number: "))
-        result = float(num1 + num2)
-    elif user_input == "subtract":
-        num1 = float(input("Enter a number: "))
-        num2 = float(input("Enter another number: "))
-        result = str(num1 - num2)
-    elif user_input == "multiply":
-        num1 = float(input("Enter a number: "))
-        num2 = float(input("Enter another number: "))
-        result = str(num1 * num2)
-    elif user_input == "divide":
-        num1 = float(input("Enter a number: "))
-        num2 = float(input("Enter another number: "))
-        result = str(num1/num2)
     else:
-      print("Unknown input")
-    print("The answer is ",result)
+        get_nums()
+        if user_input == "add":
+            result = (num1 + num2)
+        elif user_input == "subtract":
+            result = (num1 - num2)
+        elif user_input == "multiply":
+            result = (num1 * num2)
+        elif user_input == "divide":
+            result = (num1/num2)
+        else:
+            print("Unknown input")
+        
+        print("The answer is ",result)
