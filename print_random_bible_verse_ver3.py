@@ -9,7 +9,13 @@ for line in handle:
     #case 1 line startes  with  verno
     verse_nums = re.findall(verse_delimiter,line)
 #if  there  is 1 example of  the string
-    if len(verse_nums) == 1:
+    if len(verse_nums) != 0:
+        for verse_delimiter in line:
+            if not line.partition(verse_nums[0]):
+                if verse_nums[0]!= current_verse:
+                    line_text_clean = line[len(verse_nums[0])+1:]
+                    p_bible[verse_nums[0]] = line_text_clean
+                    current_verse = verse_nums[0]
 #if  the line starts  with the string
         if re.match(verse_delimiter,line):
             if verse_nums[0]!= current_verse:
