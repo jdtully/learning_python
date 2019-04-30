@@ -3,14 +3,9 @@ import random
 import sqlite3
 
 # insert_data from p_bible to sql table
-def insert_data(k,v):
-
-    conn = sqlite3.connect('bible_proj.db')
-    cur = conn.cursor()
+def insert_data(cur,k,v):
     sql = ('''INSERT INTO bible_verse(chapter,verse)VALUES(?,?)''')
     cur.execute(sql,(k,v))
-    conn.commit()
-    cur.close()
 
 
 #put in string to avoid  error
@@ -42,11 +37,17 @@ def parse_bible(fname):
     return p_bible
 
 def get_and_insert(bible_dictionary):
+    conn = sqlite3.connect('bible_proj.db')
+    cur = conn.cursor()  
     for key in bible_dictionary.keys():
         verse=bible_dictionary[key]
-        insert_data(key,verse)
-        print(key)
-      
+        insert_data(cur,key,verse)
+    conn.commit()
+    cur.close()
+    print(key)
+
+
+    
 get_and_insert(parse_bible("genesis.txt"))
 print("done")
 
