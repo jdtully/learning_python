@@ -67,6 +67,7 @@ def find_lcm_for_range(r):
         counts=count_items_in_list(current_factors)
         for ck in counts.keys():
             if ck in lcm_factors:
+                if lcm_factors[ck]<counts[ck]:
                     lcm_factors[ck] = counts[ck]
             else:
                 lcm_factors[ck]=counts[ck]  
