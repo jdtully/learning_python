@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from .models import BibleVerse
 
-# Create your views here.
+from django.http import HttpResponse
+
+def home(request):
+    verse=BibleVerse.objects.order_by('?').first().verse
+    return HttpResponse(verse)

@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf.urls import url
+from bible_app import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^$', views.home, name='home'),
+    url('admin/', admin.site.urls),
 ]
