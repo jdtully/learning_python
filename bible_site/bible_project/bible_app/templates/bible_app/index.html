@@ -1,0 +1,12 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'bible_app/style.css' %}">
+
+{% if bible_verse %}
+<div>
+    <h1>{{bible_verse.chapter}}</h1>
+    <h2>{{bible_verse.verse}}</h2>
+</div>
+{% else %}
+    <p>No verses are available.</p>
+{% endif %}

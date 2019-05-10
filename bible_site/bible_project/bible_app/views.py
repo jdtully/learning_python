@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from .models import BibleVerse
-
 from django.http import HttpResponse
+from django.views import generic
 
-def home(request):
-    verse=BibleVerse.objects.order_by('?').first().verse
-    return HttpResponse(verse)
+class IndexView(generic.ListView):
+    template_name = 'bible_app/index.html'
+    context_object_name = 'bible_verse'
+
+    def get_queryset(self):
+        return BibleVerse.objects.order_by('?').first()
