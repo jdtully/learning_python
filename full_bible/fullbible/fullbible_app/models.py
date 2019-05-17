@@ -1,7 +1,7 @@
-from django.conf import settings
 from django.db import models
-from django.utils import timezone
-from django.db import models
+
+
+
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
 
@@ -69,7 +69,6 @@ class AuthUserUserPermissions(models.Model):
 
 
 class BibleVerse(models.Model):
-    rowid = models.TextField(blank=True, primary_key=True)
     book = models.TextField(blank=True, null=True)
     chapter = models.TextField(blank=True, null=True)
     verse = models.TextField(blank=True, null=True)

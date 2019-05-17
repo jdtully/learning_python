@@ -7,7 +7,7 @@ cur.execute('DROP TABLE IF EXISTS bible_verse')
 
 cur.execute('''
 CREATE TABLE Bible_verse (row_num INTEGER, chap TEXT, verse TEXT)''')
-def insert_line(data_insert)
+def insert_line(data_insert):
     cur.execute('SELECT verse FROM bible_verse WHERE chap = ? ', (chap,))
     row = cur.fetchone()
     if row is None:

@@ -1,6 +1,20 @@
-h1 a, h2 a {
-    color: green;
+div {
+    width: 40%;
+    padding: 10px;
+    border: 5px solid rgb(214, 29, 100);
+    margin: 50px; 
+  }
+
+
+h1 {
+    color: yellow;text-transform: uppercase
 }
-body {
-    background: white url("images/background.gif") no-repeat;
+
+h2 {color: black;}
+div {
+   /* background: white url("images/background.gif") no-repeat; background-size: cover;background-position: 50%;
+*/ background-color: lightslategrey;
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
