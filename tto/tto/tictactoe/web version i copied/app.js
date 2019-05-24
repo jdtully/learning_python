@@ -78,6 +78,7 @@ $(document).ready(function() {
         const i = $this.data('i');
         const j = $this.data('j');
         grid[i][j] = PLAYER_TOKEN;
+        
 
         let gameState = isgameover()
         if (gameState) {
